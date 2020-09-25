@@ -1,5 +1,5 @@
-import OkFail from './OkFail'
+import okFail from './okFail'
 
-const fail = (data: any) => new OkFail(false, data)
+const fail = (data: any) => okFail(false, data)
 
 export default fail
