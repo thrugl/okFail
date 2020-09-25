@@ -1,0 +1,27 @@
+{
+  "name": "okfail",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thrugl/okFail.git"
+  },
+  "keywords": [
+    "fetch",
+    "ajax"
+  ],
+  "author": "Thor Long",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thrugl/okFail/issues"
+  },
+  "homepage": "https://github.com/thrugl/okFail#readme",
+  "dependencies": {
+    "ramda": "^0.27.1",
+    "whatwg-fetch": "^3.4.1"
+  }
+}
