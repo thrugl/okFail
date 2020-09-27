@@ -1,4 +1,4 @@
-import { OkFail, okFail } from './OkFail'
+import { OkFail, okFail } from './okFail'
 
 export const ok = (data: any): OkFail<typeof data> => okFail(true, data)
 
