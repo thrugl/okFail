@@ -1,6 +1,7 @@
-class OkFail <T> {
+export class OkFail <T> {
 	ok: boolean
 	data: T
+	response?: Response
 
 	constructor (ok: boolean, data: T) {
 		this.ok   = ok
@@ -8,10 +9,6 @@ class OkFail <T> {
 	}
 }
 
-const okFail = <T>(ok: boolean, data: T) => new OkFail<T>(ok, data)
+export const okFail = (ok: boolean, data: any) => new OkFail<typeof data>(ok, data)
 
-export {
-	OkFail,
-	okFail
-}
 export default okFail

@@ -1,5 +1,5 @@
-import okFail from './okFail'
+import { OkFail, okFail } from './OkFail'
 
-const fail = (data: any) => okFail(false, data)
+export const fail = (data: any): OkFail<typeof data> => okFail(false, data)
 
 export default fail
