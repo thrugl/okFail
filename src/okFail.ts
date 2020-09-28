@@ -1,5 +1,5 @@
-import OkFail from './OkFailClass'
+import OkFailObject from './OkFailObject'
 
-const okFail = (ok: boolean, data: any) => new OkFail<typeof data>(ok, data)
+const okFail = (ok: boolean, data: any) => new OkFailObject<typeof data>(ok, data)
 
 export default okFail 

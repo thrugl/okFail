@@ -1,10 +1,11 @@
 import ok from './ok'
 import fail from './fail'
+import { OkPromise } from './types'
 
 type CheckFn = (x: unknown) => boolean
 
 const okPromise = async <T>(
-	promise: Promise<T>, 
+	promise: T|Promise<T>, 
 	check?: boolean|CheckFn
 ): OkPromise<T> => {
 	try {

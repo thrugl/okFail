@@ -1,5 +1,6 @@
 import fetch from 'cross-fetch'
 import okPromise from './okPromise'
+import { OkPromise } from './types'
 
 const okFetch = async <T>(
 	url: string, 
