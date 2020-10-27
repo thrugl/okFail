@@ -3,8 +3,8 @@ import { okFetch, okFailSwitch, isUndefined, isFunction,
 
 export type OkFetcherUrlFunc = (...args: any[]) => string
 export type OkFetcherUrl = string|OkFetcherUrlFunc
-export type OkFetcherDataFunc<T, F> = (data: T, ...args: any[]) => F 
-export type OkFetcherData<T, F> = F|OkFetcherDataFunc<T, F>
+export type OkFetcherDataFunc<T, F=T> = (data: T, ...args: any[]) => F 
+export type OkFetcherData<T, F=T> = F|OkFetcherDataFunc<T, F>
 export type OkFetcherQueryFunc = (...args: any[]) => {[x: string]: any}
 export type OkFetcherQuery = {[x: string]: any}|OkFetcherQueryFunc
 export type OkFetcherConfigFunc = (...args: any[]) => OkFetchOptions
