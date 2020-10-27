@@ -13,8 +13,8 @@ import { OkFailObject } from './OkFailObject'
 import { okFetch, OkFetchOptions, OkFetchData,
 	OkFetchDataFormatter, OkFetchType } from './okFetch'
 import { OkFetcherUrlFunc, OkFetcherUrl, OkFetcherDataFunc,
-	OkFetcherData, OkFetcherOptions, okFetcher, 
-	OkFetcherStoreGetter, OkFetcherStoreSetter } from './okFetcher'
+	OkFetcherData, OkFetcherOptions, okFetcher, OkFetcherQuery, 
+	OkFetcherQueryFunc, OkFetcherStoreGetter, OkFetcherStoreSetter } from './okFetcher'
 import { okPromise, OkPromiseValidator, OkPromiseValidatorFunc } from './okPromise'
 import { okResolve } from './okResolve'
 import { okUpdate } from './okUpdate'
@@ -33,6 +33,7 @@ export {
 	okFetcher, OkFetcherUrlFunc, OkFetcherUrl, 
 	OkFetcherDataFunc, OkFetcherData, OkFetcherOptions, 
 	OkFetcherStoreGetter, OkFetcherStoreSetter, 
+	OkFetcherQuery, OkFetcherQueryFunc,
 	okPromise, OkPromise, 
 	OkPromiseValidator, OkPromiseValidatorFunc,
 	okResolve, okUpdate,
@@ -46,7 +47,7 @@ export default {
 	okFail, ok, fail, OkFailObject, 
 	ifOK, isFail, isOK, isOkFail,
 	okFetch, okFetcher,
-	okResolve, okPromise,
+	okResolve, okPromise, okUpdate,
 	failSwitch, okSwitch, okFailSwitch,
 	failCall, okCall, okFailCall,
 	unOK

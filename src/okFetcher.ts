@@ -1,16 +1,16 @@
 import { okFetch, okFailSwitch, isUndefined, isFunction, 
 	OkFetchOptions, OkPromiseValidator, OkFail, OkPromise } from '.'
 
-export type OkFetcherUrlFunc = (...args: any[]) => string
-export type OkFetcherUrl = string|OkFetcherUrlFunc
+export type OkFetcherUrlFunc          = (...args: any[]) => string
+export type OkFetcherUrl              = string|OkFetcherUrlFunc
 export type OkFetcherDataFunc<T, F=T> = (data: T, ...args: any[]) => F 
-export type OkFetcherData<T, F=T> = F|OkFetcherDataFunc<T, F>
-export type OkFetcherQueryFunc = (...args: any[]) => {[x: string]: any}
-export type OkFetcherQuery = {[x: string]: any}|OkFetcherQueryFunc
-export type OkFetcherConfigFunc = (...args: any[]) => OkFetchOptions
-export type OkFetcherConfig = OkFetchOptions|OkFetcherConfigFunc
-export type OkFetcherStoreGetter<T> = (...args: any[]) => T|null
-export type OkFetcherStoreSetter<T> = (okObj: OkFail<T>, ...args: any[]) => void
+export type OkFetcherData<T, F=T>     = F|OkFetcherDataFunc<T, F>
+export type OkFetcherQueryFunc        = (...args: any[]) => {[x: string]: any}
+export type OkFetcherQuery            = {[x: string]: any}|OkFetcherQueryFunc
+export type OkFetcherConfigFunc       = (...args: any[]) => OkFetchOptions
+export type OkFetcherConfig           = OkFetchOptions|OkFetcherConfigFunc
+export type OkFetcherStoreGetter<T>   = (...args: any[]) => T|null
+export type OkFetcherStoreSetter<T>   = (okObj: OkFail<T>, ...args: any[]) => void
 
 export interface OkFetcherOptions <T, F=T>{
 	url: OkFetcherUrl;
