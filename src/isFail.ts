@@ -1,5 +1,5 @@
-import isOkFail from './isOkFail'
+import { isOkFail } from '.'
 
-const isFail = (o: any) => isOkFail(o) && o.ok === false
+export const isFail = (o: any) => isOkFail(o) && o.ok === false
 
 export default isFail

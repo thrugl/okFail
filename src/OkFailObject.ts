@@ -1,12 +1,18 @@
 import { OkFail } from './types'
+import { isUndefined } from '.'
 
-class OkFailObject<T> implements OkFail<T> {
+export class OkFailObject<T> implements OkFail<T> {
 	ok: boolean
 	data: T
+	error?: any
 
-	constructor (ok: boolean, data: T) {
+	constructor (ok: boolean, data: T, error?: any) {
 		this.ok   = ok
 		this.data = data
+
+		if (!isUndefined(error)) {
+			this.error = error
+		}
 	}
 }
 

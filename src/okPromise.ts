@@ -1,24 +1,27 @@
-import ok from './ok'
-import fail from './fail'
-import { OkPromise } from './types'
+import { isFunction, isUndefined, OkPromise, fail, ok } from '.'
 
-type CheckFn = (x: unknown) => boolean
+export type OkPromiseValidatorFunc = (data?: any) => boolean
+export type OkPromiseValidator = boolean|OkPromiseValidatorFunc
 
-const okPromise = async <T>(
+export const okPromise = async <T>(
 	promise: T|Promise<T>, 
-	check?: boolean|CheckFn
+	validate?: OkPromiseValidator,
+	error?: any
 ): OkPromise<T> => {
 	try {
-		const x = await promise
-		const t = typeof check
-
-		if (t === 'undefined' || (t === 'function' ? (check as CheckFn)(x) : check)) {
-			return ok(x)
+		const data = await promise
+		const isValidated = () => (
+			isFunction(validate) 
+				? (validate as OkPromiseValidatorFunc)(data) 
+				: validate
+		)
+		if (isUndefined(validate) || isValidated()) {
+			return ok(data)
 		}
-		else throw x
+		else throw data
 	}
-	catch (x) {
-		return fail(x)
+	catch (data) {
+		return fail(data, 'Failed validation')
 	}
 }
 

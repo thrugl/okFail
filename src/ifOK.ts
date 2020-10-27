@@ -1,11 +1,10 @@
-import fail from "./fail"
-import isOK from "./isOK"
-import { OkFail } from './types'
+import { OkFail, isOK, fail, isUndefined } from '.'
 
-const ifOK = (x: OkFail<any>, ifFn: Function, elseFn?: Function) => {
+/* DEPRECATED SINCE 1.5.0, USE 'okFailCall' INSTEAD */
+
+export const ifOK = (x: OkFail<any>, ifFn: Function, elseFn?: Function) => {
 	if (isOK(x)) return ifFn(x)
-	if (typeof elseFn !== 'undefined') return elseFn(x)
-	
+	if (!isUndefined(elseFn)) return (elseFn as Function)(x)
 	return fail(x)
 }
 
