@@ -60,7 +60,7 @@ export const okFetch = async <T>(
 					? qs.stringify(options.data, options?.qsDataOptions ?? {})
 					: JSON.stringify(options.data)
 				: (options.dataFormat as OkFetchDataFormatter)(options.data as OkFetchData)
-			: ''
+			: undefined
 	)
 
 	const fetchOptions = {
