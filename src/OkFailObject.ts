@@ -1,5 +1,5 @@
 import { OkFail } from './types'
-import { isUndefined } from '.'
+import { isUndefined } from './index'
 
 export class OkFailObject<T> implements OkFail<T> {
 	ok: boolean

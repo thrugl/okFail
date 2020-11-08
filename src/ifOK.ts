@@ -1,4 +1,4 @@
-import { OkFail, isOK, fail, isUndefined } from '.'
+import { OkFail, isOK, fail, isUndefined } from './index'
 
 /* DEPRECATED SINCE 1.5.0, USE 'okFailCall' INSTEAD */
 

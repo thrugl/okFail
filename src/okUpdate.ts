@@ -1,4 +1,4 @@
-import { OkFail, isUndefined } from '.'
+import { OkFail, isUndefined } from './index'
 
 type T = OkFail<any>
 

@@ -1,5 +1,5 @@
 import { isUndefined, OkFail, okPromise, addQueryString, 
-	OkPromiseValidator } from '.'
+	OkPromiseValidator } from './index'
 
 import fetch from 'cross-fetch'
 import qs from 'qs'

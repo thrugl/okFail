@@ -1,4 +1,4 @@
-import { isOkFail } from '.'
+import { isOkFail } from './index'
 
 export const isFail = (o: any) => isOkFail(o) && o.ok === false
 

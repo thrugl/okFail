@@ -1,4 +1,4 @@
-import { OkFail, okFail, okUpdate } from '.'
+import { OkFail, okFail, okUpdate } from './index'
 import isOkFail from './isOkFail'
 
 export const okResolve = (okObj: OkFail<any>, promise?: Promise<any>) => {

@@ -1,4 +1,4 @@
-import { isFunction, isUndefined, OkFail, fail, ok } from '.'
+import { isFunction, isUndefined, OkFail, fail, ok } from './index'
 
 export type OkPromiseValidatorFunc = (data?: any) => boolean
 export type OkPromiseValidator = boolean|OkPromiseValidatorFunc

@@ -1,5 +1,5 @@
 import { okFetch, okFailSwitch, isUndefined, isFunction, 
-	OkFetchOptions, OkPromiseValidator, OkFail, OkPromise } from '.'
+	OkFetchOptions, OkPromiseValidator, OkFail, OkPromise } from './index'
 
 export type OkFetcherUrlFunc          = (...args: any[]) => string
 export type OkFetcherUrl              = string|OkFetcherUrlFunc

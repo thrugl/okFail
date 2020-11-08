@@ -1,4 +1,4 @@
-import { OkFail, OkPromise, isOK, isOkFail, ok } from '.'
+import { OkFail, OkPromise, isOK, isOkFail, ok } from './index'
 
 export type OkFailCallFunc<T> = (okObj: OkFail<T>) => any
 
