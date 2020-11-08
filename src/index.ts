@@ -43,12 +43,12 @@ export {
 	fuser, lastChar, addQueryString
 }
 
-// export default {
-// 	okFail, ok, fail, OkFailObject, 
-// 	ifOK, isFail, isOK, isOkFail,
-// 	okFetch, okFetcher,
-// 	okResolve, okPromise, okUpdate,
-// 	failSwitch, okSwitch, okFailSwitch,
-// 	failCall, okCall, okFailCall,
-// 	unOK
-// }
+export default {
+	okFail, ok, fail, OkFailObject, 
+	ifOK, isFail, isOK, isOkFail,
+	okFetch, okFetcher,
+	okResolve, okPromise, okUpdate,
+	failSwitch, okSwitch, okFailSwitch,
+	failCall, okCall, okFailCall,
+	unOK
+}
