@@ -1,4 +1,4 @@
-import { isUndefined, OkPromise, okPromise, addQueryString, 
+import { isUndefined, OkFail, okPromise, addQueryString, 
 	OkPromiseValidator } from '.'
 
 import fetch from 'cross-fetch'
@@ -26,7 +26,7 @@ export const okFetch = async <T>(
 	url: string, 
 	options: OkFetchOptions = {},
 	validate?: OkPromiseValidator
-): OkPromise<T|null> => {
+): Promise<OkFail<T|null>> => {
 	const query = (
 		isUndefined(options.query) 
 			? '' 

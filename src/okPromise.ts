@@ -1,4 +1,4 @@
-import { isFunction, isUndefined, OkPromise, fail, ok } from '.'
+import { isFunction, isUndefined, OkFail, fail, ok } from '.'
 
 export type OkPromiseValidatorFunc = (data?: any) => boolean
 export type OkPromiseValidator = boolean|OkPromiseValidatorFunc
@@ -7,7 +7,7 @@ export const okPromise = async <T>(
 	promise: T|Promise<T>, 
 	validate?: OkPromiseValidator,
 	error?: any
-): OkPromise<T> => {
+): Promise<OkFail<T>> => {
 	try {
 		const data = await promise
 		const isValidated = () => (

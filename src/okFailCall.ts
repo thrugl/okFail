@@ -6,7 +6,7 @@ export const okFailCall = async <T>(
 	okObj: OkFail<T>, 
 	ifOK: OkFailCallFunc<T>, 
 	ifFail: OkFailCallFunc<T>
-): OkPromise<T> => {
+): Promise<OkFail<T>> => {
 	const result = await (isOK(okObj) ? ifOK(okObj) : ifFail(okObj))
 	return isOkFail(result) ? result : ok(result)
 }
