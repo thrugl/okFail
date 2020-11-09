@@ -31,7 +31,7 @@ export const okFetch = async <T>(
 		isUndefined(options.query) 
 			? '' 
 			: isUndefined(options.queryFormat)
-				? qs.stringify(options.query, options?.qsQueryOptions ?? {})
+				? qs?.stringify(options.query, options?.qsQueryOptions ?? {})
 				: (options.queryFormat as OkFetchDataFormatter)(options.query as OkFetchData)
 	)
 	const target = addQueryString(query, url)
