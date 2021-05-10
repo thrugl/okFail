@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
     "declaration": true,
     "outDir": "./lib",
     "moduleResolution": "node",
 		"strict": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+		"lib": ["dom", "esnext"],
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+	"exclude": ["node_modules", "**/__tests__/*"]
 }

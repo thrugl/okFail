@@ -9,7 +9,7 @@ export const okResolve = (okObj: OkFail<any>, promise?: Promise<any>) => {
 				? resolved 
 				: okFail(resolved?.ok ?? true, resolved?.data ?? resolved)
 		)
-		okUpdate(okObj, update)
+		return okUpdate(okObj, update)
 	}
 	return promise === undefined ? fn : fn(promise)
 }
