@@ -70,7 +70,7 @@ export const okFetch = async <T>(
 		body,
 		headers
 	}
-
+	console.log('fetch', fetchOptions)
 	try {
 		const load   = await fetch(target, fetchOptions)
 		const type   = load.headers.get('content-type')?.toLowerCase() ?? ''

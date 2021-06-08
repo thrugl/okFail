@@ -42,6 +42,7 @@ export function okFetcher <T, F=T>({
 			data: isFunction(data) ? (data as OkFetcherQueryFunc)(...args) : data,
 			...(isFunction(config) ? (config as OkFetcherConfigFunc)(...args) : config)
 		}
+		console.log('fetcher', options)
 
 		if (isFunction(getter)) {
 			const stored = (getter as OkFetcherStoreGetter<F>)(...args)
