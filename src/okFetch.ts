@@ -56,7 +56,7 @@ export const okFetch = async <T>(
 	}
 
 	const body = options?.body ?? (
-		(options?.method ?? '').toUpperCase() === 'POST'
+		(options?.method ?? '').toUpperCase() === 'POST' || (options?.method ?? '').toUpperCase() === 'PUT'
 			? isUndefined(options.dataFormat) 
 				? contentType === 'form'
 					? qs.stringify(options.data, options?.qsDataOptions ?? {})
