@@ -70,14 +70,13 @@ export const okFetch = async <T>(
 		body,
 		headers
 	}
-	console.log('fetch', fetchOptions)
 	try {
 		const load   = await fetch(target, fetchOptions)
 		const type   = load.headers.get('content-type')?.toLowerCase() ?? ''
 		const isJSON = (options?.forceJSON ?? false) || (type && type.includes('json'))
 		const data   = (isJSON ? load.json() : load.text()) as Promise<T>
 
-		return okPromise<T>(data, validate)
+		return okPromise<T>(data, load.status === 200 ? validate : false)
 	}
 	catch (e) {
 		return fail(null, e)
