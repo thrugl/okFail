@@ -1,8 +1,11 @@
-import { OkFail, okFail, okUpdate } from './index'
+import { curry } from 'ramda'
+import { okFail, okUpdate } from './index'
 import isOkFail from './isOkFail'
 
-export const okResolve = (okObj: OkFail<any>, promise?: Promise<any>) => {
-	const fn = async (promise: Promise<any>) => {
+import type { OkFail } from './index'
+
+export const okResolve = curry(
+	async (okObj: OkFail<any>, promise: Promise<any>) => {
 		const resolved = await promise
 		const update = (
 			isOkFail(resolved) 
@@ -11,7 +14,6 @@ export const okResolve = (okObj: OkFail<any>, promise?: Promise<any>) => {
 		)
 		return okUpdate(okObj, update)
 	}
-	return promise === undefined ? fn : fn(promise)
-}
+)
 
 export default okResolve
